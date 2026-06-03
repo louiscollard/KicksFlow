@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# ⚡ KicksFlow — Premium Sneaker Marketplace & Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**KicksFlow** est un SaaS de gestion de stock et une marketplace de sneakers au design minimaliste et moderne. Ce projet démontre la maîtrise d'une stack Front-End moderne, la gestion d'états globaux complexes et l'intégration d'une base de données NoSQL en temps réel.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Fonctionnalités Clés
 
-## React Compiler
+- **E-Space Client :** Catalogue fluide de sneakers et panier d'achat avancé (calculs et modification des quantités en direct).
+- **Dashboard Admin :** Système de CRUD complet avec un formulaire d'édition "Live" (les modifications se répercutent instantanément sur le catalogue).
+- **Persistance :** Synchronisation immédiate des produits et des paniers via une base de données.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Stack Technique
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework :** React 19 (Vite)
+- **Langage :** TypeScript (Typage strict des flux de données)
+- **Design System :** Tailwind CSS (Intégration sur mesure, look épuré)
+- **Routing :** React Router v7
+- **Base de données :** Firebase Firestore (Temps réel)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 💻 Démarrage Local
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Suivez ces étapes pour lancer le projet sur votre machine :
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Cloner le dépôt**
+```bash
+   git clone [https://github.com/VOTRE_PSEUDO/kicksflow.git](https://github.com/VOTRE_PSEUDO/kicksflow.git)
+   cd kicksflow
+   ```
+   
+2. Installer les dépendances
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+   npm install
+   ```
+   
+3. Configurer l'environnement
+   Créer un fichier .env.local à la racine et ajouter les clés Firebase :
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```env
+  VITE_FIREBASE_API_KEY=votre_cle_api
+  VITE_FIREBASE_AUTH_DOMAIN=votre_domaine
+  VITE_FIREBASE_PROJECT_ID=votre_id_projet
+  VITE_FIREBASE_STORAGE_BUCKET=votre_bucket
+  VITE_FIREBASE_MESSAGING_SENDER_ID=votre_sender_id
+  VITE_FIREBASE_APP_ID=votre_app_id
+  ```
+  
+4. Lancer le serveur de développement
+
+```bash
+   npm run dev
+   ```
