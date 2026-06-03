@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* C'est ici, avec la v4, qu'on configure ton Design System KicksFlow ! */
+@theme {
+    --color-primary: #0052ff;
+    --color-primary-hover: #0041cc;
+    --color-bg-light: #f8fafc;
+    --color-bg-card: #ffffff;
+    --color-text-dark: #0f172a;
+}
