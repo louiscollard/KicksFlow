@@ -26,10 +26,12 @@
 
 Follow these steps to run the project locally on your machine:
 
-1. **Clone the repository**
-   ```bash
+1. Clone the repository
+   
+```bash
    git clone [https://github.com/YOUR_USERNAME/kicksflow.git](https://github.com/YOUR_USERNAME/kicksflow.git)
    cd kicksflow
+   ```
    
 2. Install dependencies
 
