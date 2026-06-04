@@ -1,56 +1,55 @@
 # ⚡ KicksFlow — Premium Sneaker Marketplace & Dashboard
 
-**KicksFlow** est un SaaS de gestion de stock et une marketplace de sneakers au design minimaliste et moderne. Ce projet démontre la maîtrise d'une stack Front-End moderne, la gestion d'états globaux complexes et l'intégration d'une base de données NoSQL en temps réel.
+**KicksFlow** is an inventory management SaaS and premium sneakers marketplace featuring a minimalist, modern design. This project showcases proficiency in a modern Front-End stack, complex global state management, and real-time integration with a NoSQL database.
 
 ---
 
-## 🚀 Fonctionnalités Clés
+## 🚀 Key Features
 
-- **E-Space Client :** Catalogue fluide de sneakers et panier d'achat avancé (calculs et modification des quantités en direct).
-- **Dashboard Admin :** Système de CRUD complet avec un formulaire d'édition "Live" (les modifications se répercutent instantanément sur le catalogue).
-- **Persistance :** Synchronisation immédiate des produits et des paniers via une base de données.
-
----
-
-## 🛠️ Stack Technique
-
-- **Framework :** React 19 (Vite)
-- **Langage :** TypeScript (Typage strict des flux de données)
-- **Design System :** Tailwind CSS (Intégration sur mesure, look épuré)
-- **Routing :** React Router v7
-- **Base de données :** Firebase Firestore (Temps réel)
+- **Customer E-Space:** Seamless sneaker catalog and advanced shopping cart (live total calculations and quantity updates).
+- **Admin Dashboard:** Full CRUD system featuring a "Live" editing form (changes instantly reflect across the product catalog).
+- **Persistence:** Immediate synchronization of products and carts via a real-time database.
 
 ---
 
-## 💻 Démarrage Local
+## 🛠️ Tech Stack
 
-Suivez ces étapes pour lancer le projet sur votre machine :
+- **Framework:** React 19 (Vite)
+- **Language:** TypeScript (Strict typing for data streams)
+- **Design System:** Tailwind CSS (Custom integration, clean & modern aesthetic)
+- **Routing:** React Router v7
+- **Database:** Firebase Firestore (Real-time tracking)
 
-1. **Cloner le dépôt**
-```bash
-   git clone [https://github.com/VOTRE_PSEUDO/kicksflow.git](https://github.com/VOTRE_PSEUDO/kicksflow.git)
+---
+
+## 💻 Local Setup
+
+Follow these steps to run the project locally on your machine:
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/kicksflow.git](https://github.com/YOUR_USERNAME/kicksflow.git)
    cd kicksflow
-   ```
    
-2. Installer les dépendances
+2. Install dependencies
 
 ```bash
    npm install
    ```
    
-3. Configurer l'environnement
-   Créer un fichier .env.local à la racine et ajouter les clés Firebase :
+3. Configure the environment variables
+   Create a .env.local file at the root of the project and add your Firebase credentials:
 
 ```env
-  VITE_FIREBASE_API_KEY=votre_cle_api
-  VITE_FIREBASE_AUTH_DOMAIN=votre_domaine
-  VITE_FIREBASE_PROJECT_ID=votre_id_projet
-  VITE_FIREBASE_STORAGE_BUCKET=votre_bucket
-  VITE_FIREBASE_MESSAGING_SENDER_ID=votre_sender_id
-  VITE_FIREBASE_APP_ID=votre_app_id
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
   ```
   
-4. Lancer le serveur de développement
+4. Start the development server
 
 ```bash
    npm run dev
