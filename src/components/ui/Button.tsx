@@ -7,7 +7,7 @@ const base =
     "active:scale-[0.99] cursor-pointer";
 
 type ButtonProps = ComponentProps<"button"> & {
-    icon : ReactNode;
+    icon? : ReactNode;
 };
 
 export function Button({ type = "button", className = "", icon, children, ...props }: ButtonProps) {
