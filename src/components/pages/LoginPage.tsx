@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
 import { useState } from "react";
+import { CgProfile } from "react-icons/cg";
+import { IoIosArrowForward } from "react-icons/io";
 
 export function LoginPage() {
     const [firstName , setFirstName ] = useState("");
@@ -38,9 +40,10 @@ export function LoginPage() {
                             placeholder="Ex: Louis"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
+                            icon={<CgProfile/>}
                         />
                     </div>
-                    <Button type="submit" className="w-full mt-2">
+                    <Button type="submit" className="w-full mt-2" icon={<IoIosArrowForward />}>
                         Accéder à votre espace
                     </Button>
                 </form>
