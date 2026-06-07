@@ -4,7 +4,7 @@
 
 ---
 
-![screenshot](assets/screenshot.png)
+![Aperçu de KicksFlow](src/assets/images/screenshot.png)
 
 ---
 
