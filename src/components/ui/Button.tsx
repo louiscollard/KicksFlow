@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils/cn";
 import type { ComponentProps, ReactNode } from "react";
 
 const base =
@@ -12,7 +13,7 @@ type ButtonProps = ComponentProps<"button"> & {
 
 export function Button({ type = "button", className = "", icon, children, ...props }: ButtonProps) {
     return (
-        <button type={type} className={`${base} ${className}`} {...props}>
+        <button type={type} className={cn(base, className)} {...props}>
             {children}
             {icon}
         </button>

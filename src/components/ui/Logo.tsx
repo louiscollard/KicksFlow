@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils/utils";
+import { cn } from "@/lib/utils/cn";
 import { FiZap } from "react-icons/fi";
 
 export function Logo({ className }: { className?: string }) {
