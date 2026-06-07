@@ -4,6 +4,10 @@
 
 ---
 
+![screenshot](assets/screenshot.png)
+
+---
+
 ## 🚀 Key Features
 
 - **Customer E-Space:** Seamless sneaker catalog and advanced shopping cart (live total calculations and quantity updates).
