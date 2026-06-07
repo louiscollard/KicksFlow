@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils/utils";
+import { cn } from "@/lib/utils/cn";
 import type { ComponentProps, ReactNode } from "react";
 
 const base =
