@@ -1,13 +1,13 @@
-import sneaker1 from "@/assets/images/sneaker1.jpg";
-import sneaker10 from "@/assets/images/sneaker10.jpg";
-import sneaker2 from "@/assets/images/sneaker2.jpg";
-import sneaker3 from "@/assets/images/sneaker3.jpg";
-import sneaker4 from "@/assets/images/sneaker4.jpg";
-import sneaker5 from "@/assets/images/sneaker5.jpg";
-import sneaker6 from "@/assets/images/sneaker6.jpg";
-import sneaker7 from "@/assets/images/sneaker7.jpg";
-import sneaker8 from "@/assets/images/sneaker8.jpg";
-import sneaker9 from "@/assets/images/sneaker9.jpg";
+import sneaker1 from "@/assets/images/sneaker1.png";
+import sneaker10 from "@/assets/images/sneaker10.png";
+import sneaker2 from "@/assets/images/sneaker2.png";
+import sneaker3 from "@/assets/images/sneaker3.png";
+import sneaker4 from "@/assets/images/sneaker4.png";
+import sneaker5 from "@/assets/images/sneaker5.png";
+import sneaker6 from "@/assets/images/sneaker6.png";
+import sneaker7 from "@/assets/images/sneaker7.png";
+import sneaker8 from "@/assets/images/sneaker8.png";
+import sneaker9 from "@/assets/images/sneaker9.png";
 
 export type Sneaker = {
     id: number;
