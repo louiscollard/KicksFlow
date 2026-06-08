@@ -1,9 +1,8 @@
-import '@/App.css';
-import { LoginPage } from '@/components/pages/Login/LoginPage';
 import '@/index.css';
+import { LoginPage } from '@/pages/Login/LoginPage';
+import { OrderPage } from '@/pages/Order/OrderPage';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
-import { OrderPage } from './components/pages/Order/OrderPage';
 
 function App() {
   return (

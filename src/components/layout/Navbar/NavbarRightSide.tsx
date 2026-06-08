@@ -1,5 +1,5 @@
-import { AdminToggle } from "@/components/pages/Order/Navbar/AdminToggle";
-import { Profile } from "@/components/pages/Order/Navbar/Profile";
+import { AdminToggle } from "@/components/layout/Navbar/AdminToggle";
+import { Profile } from "@/components/layout/Navbar/Profile";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
