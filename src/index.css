@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
-/* C'est ici, avec la v4, qu'on configure ton Design System KicksFlow ! */
 @theme {
-    --color-primary: #0052ff;
-    --color-primary-hover: #0041cc;
-    --color-bg-light: #f8fafc;
-    --color-bg-card: #ffffff;
-    --color-text-dark: #0f172a;
+    --color-paper: #fbfaf7;
+    --color-paper-2: #f2efe9;
+    --color-ink: #1c1a17;
+    --color-ink-soft: #57524a;
+    --color-line: #e2ddd3;
+    --color-accent: oklch(0.63 0.20 33);
+    --color-accent-d: oklch(0.55 0.20 33);
+    --color-volt: oklch(0.86 0.18 120);
+
+    --font-sans: "Space Grotesk", sans-serif;
+    /* ← tout le site hérite de ça */
+    --font-display: "Bricolage Grotesque", sans-serif;
+    /* ← pour le logo / titres via font-display */
+
+    --radius-card: 14px;
 }

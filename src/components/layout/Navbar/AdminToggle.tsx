@@ -19,7 +19,7 @@ export function AdminToggle({isAdmin, toggleAdmin} :AdminToggleProps) {
                 className={cn(
                     "relative h-6 w-11 shrink-0 rounded-full transition-colors duration-200",
                     "focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/40",
-                    isAdmin ? "bg-blue-500" : "bg-gray-300",
+                    isAdmin ? "bg-amber-500" : "bg-gray-300",
                 )}
             >
                 <span

@@ -1,10 +1,12 @@
 import { cn } from "@/lib/cn";
 import { FiZap } from "react-icons/fi";
 
-export function Logo({ className }: { className?: string }) {
+type LogoProps = { className?: string };
+
+export function Logo({ className }: LogoProps) {
     return (
-        <span className={cn("inline-flex items-center gap-1.5 font-black tracking-tight text-gray-900", className)}>
-            <FiZap className="h-[1em] w-[1em] fill-amber-400 text-amber-400" aria-hidden="true" />
+        <span className={cn("flex items-center gap-2 whitespace-nowrap font-display text-[23px] font-extrabold tracking-[-0.03em] text-ink", className)}>
+            <FiZap className="text-amber-400" aria-hidden />
             KicksFlow
         </span>
     );

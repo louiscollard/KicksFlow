@@ -12,7 +12,7 @@ export function Profile() {
     return (
         <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">
                     {firstName?.charAt(0).toUpperCase()}
                 </span>
                 <span className="text-sm font-semibold text-gray-800">{firstName}</span>
