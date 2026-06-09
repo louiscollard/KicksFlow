@@ -1,15 +1,18 @@
-import '@/App.css';
-import { LoginPage } from '@/components/pages/Login/LoginPage';
 import '@/index.css';
+import { LoginPage } from '@/pages/Login/LoginPage';
+import { OrderPage } from '@/pages/Order/OrderPage';
 import { Route, Routes } from 'react-router';
-import { OrderPage } from './components/pages/Order/OrderPage';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<LoginPage/>} />
-      <Route path='/order/:firstName' element={<OrderPage/>} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path='/' element={<LoginPage/>} />
+        <Route path='/order/:firstName' element={<OrderPage/>} />
+      </Routes>
+      <ToastContainer position="bottom-right" />
+    </>
   )
 }
 
