@@ -25,7 +25,7 @@ export function LoginPage() {
                 </header>
 
                 <div className="mx-auto flex w-full max-w-md flex-1 flex-col justify-center py-12">
-                    <h1 className="font-display text-5xl font-extrabold tracking-[-0.03em] text-ink">
+                    <h1 className="font-display text-5xl font-extrabold tracking-tighter text-ink">
                         Bienvenue.
                     </h1>
                     <p className="mt-4 text-ink-soft">
@@ -59,17 +59,18 @@ export function LoginPage() {
 
             <aside className="relative hidden overflow-hidden bg-ink text-paper lg:block">
                 <img src={sneakerLogin} alt="" className="absolute inset-0 h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/40" />
+                
+                <div className="absolute inset-0 bg-linear-to-t from-ink via-ink/80 to-ink/40" />
 
                 <div className="relative z-10 flex h-full flex-col justify-between p-12">
                     <div className="flex items-center justify-between">
-                        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] backdrop-blur-sm">
+                        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur-sm">
                             <span className="h-2 w-2 rounded-full bg-volt" /> 12 480 paires en ligne
                         </span>
                     </div>
 
                     <div>
-                        <h2 className="font-display text-5xl font-extrabold leading-[1.04] tracking-[-0.02em]">
+                        <h2 className="font-display text-5xl font-extrabold leading-none tracking-tight">
                             Ton vestiaire pour les <em className="italic text-accent">grails</em> — acheté, vendu, vérifié.
                         </h2>
                         <div className="mt-10 flex gap-12 border-t border-white/15 pt-6">
