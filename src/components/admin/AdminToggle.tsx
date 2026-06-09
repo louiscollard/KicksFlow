@@ -1,9 +1,7 @@
+import { useAdmin } from "@/components/admin/useAdmin";
 import { cn } from "@/lib/cn";
-type AdminToggleProps = {
-    isAdmin: boolean;
-    toggleAdmin: () => void;
-};
-export function AdminToggle({isAdmin, toggleAdmin} :AdminToggleProps) {
+export function AdminToggle() {
+    const {isAdmin,toggleAdmin} = useAdmin();
     return (
         <div className="inline-flex items-center gap-3">
             <span id="admin-label" className="text-sm font-semibold text-gray-700">

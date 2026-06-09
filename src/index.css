@@ -9,11 +9,13 @@
     --color-accent: oklch(0.63 0.20 33);
     --color-accent-d: oklch(0.55 0.20 33);
     --color-volt: oklch(0.86 0.18 120);
-
     --font-sans: "Space Grotesk", sans-serif;
-    /* ← tout le site hérite de ça */
     --font-display: "Bricolage Grotesque", sans-serif;
-    /* ← pour le logo / titres via font-display */
-
     --radius-card: 14px;
+    --toastify-toast-bd-radius: 14px;
+    --toastify-toast-shadow: 0 12px 40px -12px rgba(28, 26, 23, 0.25);
+    --toastify-font-family: "Space Grotesk", sans-serif;
+    --toastify-color-light: #fbfaf7;
+    --toastify-text-color-light: #1c1a17;
+    --toastify-color-progress-light: #1c1a17;
 }
