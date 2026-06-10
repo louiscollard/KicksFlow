@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
 export type AdminContextType = {
-    isAdmin: boolean; 
+    isAdmin: boolean;
     toggleAdmin: () => void;
 };
 

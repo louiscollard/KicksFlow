@@ -1,4 +1,4 @@
-import { AdminContext } from "@/components/admin/useAdmin";
+import { AdminContext } from "@/context/AdminContext";
 import { type ReactNode, useState } from "react";
 import { toast } from "react-toastify";
 export function AdminProvider({ children }: { children: ReactNode }) {

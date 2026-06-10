@@ -1,4 +1,4 @@
-import { useAdmin } from "@/components/admin/useAdmin";
+import { useAdmin } from "@/context/AdminContext";
 import { cn } from "@/lib/cn";
 export function AdminToggle() {
     const {isAdmin,toggleAdmin} = useAdmin();

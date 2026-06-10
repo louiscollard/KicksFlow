@@ -1,3 +1,4 @@
+import { AddSneakerForm } from "@/components/admin/AddSneakerForm";
 import { cn } from "@/lib/cn";
 import { useState } from "react";
 import { FiChevronDown, FiEdit2, FiPlus } from "react-icons/fi";
@@ -59,11 +60,9 @@ export function AdminTabs() {
                     <h2 className="font-display text-base font-bold text-ink">
                         {TABS.find((t) => t.id === activeTab)!.title}
                     </h2>
-                    <p className="mt-1 text-sm text-ink-soft">
                         {activeTab === "add"
-                            ? "Le formulaire d'ajout viendra ici."
+                            ? <AddSneakerForm/>
                             : "Clique un produit dans la grille pour le charger ici."}
-                    </p>
                 </div>
             )}
         </section>

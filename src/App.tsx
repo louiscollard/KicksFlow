@@ -1,4 +1,4 @@
-import { AdminProvider } from '@/components/admin/AdminContext';
+import { AdminProvider } from '@/context/AdminProvider';
 import '@/index.css';
 import { LoginPage } from '@/pages/Login/LoginPage';
 import { OrderPage } from '@/pages/Order/OrderPage';
