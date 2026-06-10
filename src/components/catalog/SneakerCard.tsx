@@ -1,13 +1,17 @@
+import { useAdmin } from "@/context/AdminContext";
+import { useSneakers } from "@/context/SneakerContext";
 import type { Sneaker } from "@/data/sneakers";
 import { cn } from "@/lib/cn";
 import { formatPrice } from "@/lib/format";
-import { FiCheck, FiPlus } from "react-icons/fi";
+import { FiCheck, FiPlus, FiX } from "react-icons/fi";
 
 type SneakerCardProps = {
     sneaker: Sneaker;
 };
 
 export function SneakerCard({ sneaker }: SneakerCardProps) {
+    const { isAdmin } = useAdmin();
+    const { removeSneaker } = useSneakers();
     return (
         <article className={cn(
             "group relative flex flex-col rounded-card border border-line bg-white",
@@ -40,6 +44,10 @@ export function SneakerCard({ sneaker }: SneakerCardProps) {
                         Épuisé
                     </span>
                 )}
+                {isAdmin && <button type="button" onClick={() => removeSneaker(sneaker.id)} aria-label={`Supprimer ${sneaker.title}`}
+                        className="absolute right-3 top-3 z-20 grid h-8 w-8 place-items-center rounded-full bg-white/85 text-ink-soft backdrop-blur-sm transition-colors hover:bg-red-500 hover:text-white">
+                        <FiX className="h-4 w-4" />
+                </button>}
             </div>
             
             <div className="flex flex-1 flex-col px-4 pb-4 pt-4">
