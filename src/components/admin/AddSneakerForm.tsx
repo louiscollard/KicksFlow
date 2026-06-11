@@ -16,7 +16,7 @@ export function AddSneakerForm() {
 
     const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
-        addSneaker({ title, price: Number(price), imageSource, isAvailable, isAdvertised, quantity : 0});
+        addSneaker({ title, price: Number(price), imageSource, isAvailable, isAdvertised });
         setTitle("");
         setPrice("");
         setImageSource("");
