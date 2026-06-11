@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export function SneakerProvider({ children }: { children: ReactNode }) {
     const [sneakers, setSneakers] = useState<Sneaker[]>(sneakersData.LARGE);
+    const [editingId, setEditingId] = useState<number | null>(null);
 
     const addSneaker = (sneaker: Omit<Sneaker, "id">) => {
         const newSneaker: Sneaker = { ...sneaker, id: Date.now() };
@@ -15,8 +16,15 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
         setSneakers((prev) => prev.filter((s) => s.id !== id));
     };
 
+    const updateSneaker = (id: number, changes: Omit<Sneaker, "id">) => {
+        setSneakers((prev) => prev.map((s) => (s.id === id ? { ...s, ...changes } : s)));
+    };
+
+    const startEditing = (id: number) => setEditingId(id);
+    const cancelEditing = () => setEditingId(null);
+
     return (
-        <SneakerContext.Provider value={{ sneakers, addSneaker, removeSneaker }}>
+        <SneakerContext.Provider value={{ sneakers, editingId, addSneaker, removeSneaker, updateSneaker, startEditing, cancelEditing }}>
             {children}
         </SneakerContext.Provider>
     );
