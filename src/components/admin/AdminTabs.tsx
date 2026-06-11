@@ -1,7 +1,9 @@
 import { AddSneakerForm } from "@/components/admin/AddSneakerForm";
+import { useSneakers } from "@/context/SneakerContext";
 import { cn } from "@/lib/cn";
 import { useState } from "react";
 import { FiChevronDown, FiEdit2, FiPlus } from "react-icons/fi";
+import { EditSneakerForm } from "./EditSneakerForm";
 
 const TABS = [
     { id: "add", label: "Ajouter", title: "Ajouter un produit", icon: FiPlus },
@@ -13,6 +15,18 @@ type TabId = (typeof TABS)[number]["id"];
 export function AdminTabs() {
     const [activeTab, setActiveTab] = useState<TabId>("add");
     const [isOpen, setIsOpen] = useState(true);
+    const { sneakers, editingId } = useSneakers();
+    const [prevEditingId, setPrevEditingId] = useState(editingId);
+
+    const editingSneaker = sneakers.find((s) => s.id === editingId);
+
+    if (editingId !== prevEditingId) {
+        setPrevEditingId(editingId);
+        if (editingId) {
+            setActiveTab("edit");
+            setIsOpen(true);
+        }
+    }
 
     return (
         <section
@@ -60,9 +74,13 @@ export function AdminTabs() {
                     <h2 className="font-display text-base font-bold text-ink">
                         {TABS.find((t) => t.id === activeTab)!.title}
                     </h2>
-                        {activeTab === "add"
-                            ? <AddSneakerForm/>
-                            : "Clique un produit dans la grille pour le charger ici."}
+                    {activeTab === "add" ? (
+                            <AddSneakerForm />
+                        ) : editingSneaker ? (
+                            <EditSneakerForm key={editingSneaker.id} sneaker={editingSneaker} />
+                        ) : (
+                            <p className="text-sm text-ink-soft">Clique le crayon sur un produit pour le modifier.</p>
+                    )}
                 </div>
             )}
         </section>
