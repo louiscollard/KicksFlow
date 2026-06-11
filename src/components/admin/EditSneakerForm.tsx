@@ -17,7 +17,6 @@ export function EditSneakerForm({ sneaker }: EditSneakerFormProps) {
     const [price, setPrice] = useState(String(sneaker.price));
     const [imageSource, setImageSource] = useState(sneaker.imageSource);
     const [imageError, setImageError] = useState(false);
-    const quantity = sneaker.quantity;
     const [isAvailable, setIsAvailable] = useState(sneaker.isAvailable);
     const [isAdvertised, setIsAdvertised] = useState(sneaker.isAdvertised);
 
@@ -27,7 +26,6 @@ export function EditSneakerForm({ sneaker }: EditSneakerFormProps) {
             title,
             price: Math.round(Number(price) * 100) / 100,
             imageSource,
-            quantity,
             isAvailable,
             isAdvertised
         });
