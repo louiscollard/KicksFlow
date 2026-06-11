@@ -1,20 +1,25 @@
+import { CartDrawer } from '@/components/cart/CartDrawer';
 import { AdminProvider } from '@/context/AdminProvider';
+import { CartProvider } from '@/context/CartProvider';
+import { SneakerProvider } from '@/context/SneakerProvider';
 import '@/index.css';
 import { LoginPage } from '@/pages/Login/LoginPage';
 import { OrderPage } from '@/pages/Order/OrderPage';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
-import { SneakerProvider } from './context/SneakerProvider';
 
 function App() {
   return (
     <AdminProvider>
       <SneakerProvider>
-        <Routes>
-          <Route path='/' element={<LoginPage/>} />
-          <Route path='/order/:firstName' element={<OrderPage/>} />
-        </Routes>
-        <ToastContainer position="bottom-right" />
+        <CartProvider>
+          <CartDrawer />
+          <Routes>
+            <Route path='/' element={<LoginPage/>} />
+            <Route path='/order/:firstName' element={<OrderPage/>} />
+          </Routes>
+          <ToastContainer position="bottom-right" />
+        </CartProvider>
       </SneakerProvider>
     </AdminProvider>
   )

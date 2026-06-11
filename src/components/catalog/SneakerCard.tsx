@@ -1,7 +1,8 @@
 import type { Sneaker } from "@/data/sneakers";
 import { cn } from "@/lib/cn";
 import { formatPrice } from "@/lib/format";
-import { FiCheck, FiEdit2, FiPlus, FiX } from "react-icons/fi";
+import { FiCheck, FiEdit2, FiX } from "react-icons/fi";
+import { AddToCartButton } from "../cart/AddToCartButton";
 
 type SneakerCardProps = {
     sneaker: Sneaker;
@@ -79,11 +80,7 @@ export function SneakerCard({ sneaker, isAdmin, removeSneaker, startEditing }: S
                     <div className="font-display text-xl font-bold tabular-nums tracking-tight text-ink">
                         {formatPrice(sneaker.price)}
                     </div>
-
-                    <button aria-label="Ajouter au panier" disabled={!sneaker.isAvailable}
-                        className="grid h-10 w-10 place-items-center rounded-full bg-paper-2 text-ink transition-all duration-200 hover:rotate-90 hover:bg-ink hover:text-paper disabled:cursor-not-allowed disabled:opacity-40">
-                        <FiPlus className="h-5 w-5" />
-                    </button>
+                    <AddToCartButton sneaker={sneaker}/>
                 </div>
             </div>
         </article>
