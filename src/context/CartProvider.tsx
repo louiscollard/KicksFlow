@@ -1,10 +1,11 @@
 import { CartContext, type CartItem } from "@/context/CartContext";
 import type { Sneaker } from "@/data/sneakers";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import type { ReactNode } from "react";
 import { useState } from "react";
 
 export function CartProvider({ children }: { children: ReactNode }) {
-    const [items, setItems] = useState<CartItem[]>([]);
+    const [items, setItems] = useLocalStorage<CartItem[]>("cart", []);
     const [isOpen, setIsOpen] = useState(false);
 
     const addToCart = (sneaker: Sneaker) => {

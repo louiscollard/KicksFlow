@@ -21,7 +21,6 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
             setError(null);
             try {
                 let menu = await getUser(name);
-                console.log(menu)
                 if (menu === null) {
                     menu = fakeMenu;
                     await createUser(name, fakeMenu);

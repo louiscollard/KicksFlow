@@ -1,11 +1,14 @@
+import { useCart } from "@/context/CartContext";
 import { FiLogOut } from "react-icons/fi";
 import { useNavigate, useParams } from "react-router";
 
 export function Profile() {
     const { username } = useParams();
+    const { clearCart } = useCart();
     const navigate = useNavigate();
 
     const handleLogout = () => {
+        clearCart();
         navigate("/");
     }
     
