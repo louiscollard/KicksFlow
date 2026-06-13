@@ -1,4 +1,4 @@
-import { createUser, getUser } from "@/api/users";
+import { createUser, getUser, updateUserMenu } from "@/api/users";
 import { SneakerContext } from "@/context/SneakerContext";
 import { fakeMenu, type Sneaker } from "@/data/sneakers";
 import type { ReactNode } from "react";
@@ -22,7 +22,7 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
             try {
                 let menu = await getUser(name);
                 console.log(menu)
-                if (menu === null) {            // nouvel utilisateur
+                if (menu === null) {
                     menu = fakeMenu;
                     await createUser(name, fakeMenu);
                 }
@@ -37,17 +37,21 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
     }, [username]);
 
 
+    const persist = (menu: Sneaker[]) => {
+        setSneakers(menu);
+        if (username) updateUserMenu(username, menu);   // garde ici → username: string
+    };
+
     const addSneaker = (sneaker: Omit<Sneaker, "id">) => {
-        const newSneaker: Sneaker = { ...sneaker, id: Date.now() };
-        setSneakers((prev) => [newSneaker, ...prev]);
+        persist([{ ...sneaker, id: Date.now() }, ...sneakers]);
     };
 
     const removeSneaker = (id: number) => {
-        setSneakers((prev) => prev.filter((s) => s.id !== id));
+        persist(sneakers.filter((s) => s.id !== id));
     };
 
     const updateSneaker = (id: number, changes: Omit<Sneaker, "id">) => {
-        setSneakers((prev) => prev.map((s) => (s.id === id ? { ...s, ...changes } : s)));
+        persist(sneakers.map((s) => (s.id === id ? { ...s, ...changes } : s)));
     };
 
     const startEditing = (id: number) => setEditingId(id);
