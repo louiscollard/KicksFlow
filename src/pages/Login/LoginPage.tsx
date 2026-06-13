@@ -9,12 +9,12 @@ import { FiArrowRight } from "react-icons/fi";
 import { useNavigate } from "react-router";
 
 export function LoginPage() {
-    const [firstName, setFirstName] = useState("");
+    const [username, setusername] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
-        navigate(`/order/${firstName}`);
+        navigate(`/order/${username}`);
     };
 
     return (
@@ -34,16 +34,16 @@ export function LoginPage() {
 
                     <form onSubmit={handleSubmit} className="mt-10 flex flex-col gap-5">
                         <div className="flex flex-col gap-2">
-                            <Label htmlFor="firstName" className="text-sm font-semibold text-ink">
+                            <Label htmlFor="username" className="text-sm font-semibold text-ink">
                                 Prénom* :
                             </Label>
                             <Input
-                                id="firstName"
-                                name="firstName"
+                                id="username"
+                                name="username"
                                 type="text"
                                 placeholder="Ex : Louis"
-                                value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
+                                value={username}
+                                onChange={(e) => setusername(e.target.value)}
                                 icon={<CgProfile />}
                                 required
                             />

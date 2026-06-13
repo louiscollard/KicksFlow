@@ -11,16 +11,18 @@ import { ToastContainer } from 'react-toastify';
 function App() {
   return (
     <AdminProvider>
-      <SneakerProvider>
         <CartProvider>
           <CartDrawer />
           <Routes>
             <Route path='/' element={<LoginPage/>} />
-            <Route path='/order/:firstName' element={<OrderPage/>} />
+            <Route path='/order/:username' element={
+            <SneakerProvider>
+              <OrderPage />
+            </SneakerProvider>
+            } />
           </Routes>
           <ToastContainer position="bottom-right" />
         </CartProvider>
-      </SneakerProvider>
     </AdminProvider>
   )
 }

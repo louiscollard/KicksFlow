@@ -3,6 +3,8 @@ import { createContext, useContext } from "react";
 
 export type SneakerContextType = {
     sneakers: Sneaker[];
+    isLoading: boolean;
+    error: string | null;
     editingId: number | null;
     addSneaker: (sneaker: Omit<Sneaker, "id">) => void;
     removeSneaker: (id: number) => void;
