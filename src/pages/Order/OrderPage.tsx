@@ -8,9 +8,7 @@ import { useSneakers } from "@/context/SneakerContext";
 import { NotFoundPage } from "@/pages/NotFound/NotFoundPage";
 export function OrderPage() {
     const { isAdmin } = useAdmin();
-    const { isLoading, notFound, error } = useSneakers();
-
-    if (isLoading) return <p className="py-20 text-center text-ink-soft">Chargement du menu…</p>;
+    const { notFound, error } = useSneakers();
 
     if (notFound) {
         return (
