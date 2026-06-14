@@ -29,7 +29,7 @@ export function EditSneakerForm({ sneaker }: EditSneakerFormProps) {
             isAvailable,
             isAdvertised
         });
-        toast("Produit modifié", { icon: false });
+        toast("Produit modifié");
         cancelEditing();
     };
 
