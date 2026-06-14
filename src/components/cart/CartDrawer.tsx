@@ -1,9 +1,10 @@
+import { CartLine } from "@/components/cart/CartLine";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/format";
-import { FiMinus, FiPlus, FiX } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
 
 export function CartDrawer() {
-    const { items, isOpen, closeCart, updateQuantity, removeFromCart, clearCart } = useCart();
+    const { items, isOpen, closeCart, clearCart } = useCart();
     const total = items.reduce((sum, item) => sum + item.sneaker.price * item.quantity, 0);
 
     return (
@@ -30,34 +31,9 @@ export function CartDrawer() {
                     {items.length === 0 ? (
                         <p className="mt-10 text-center text-sm text-ink-soft">Ton panier est vide.</p>
                     ) : (
-                        <ul className="flex flex-col gap-4">
+                        <ul className="flex flex-col gap-3">
                             {items.map((item) => (
-                                <li key={item.sneaker.id} className="flex gap-3">
-                                    <img src={item.sneaker.imageSource} alt=""
-                                        className="h-16 w-16 rounded-lg object-cover" />
-                                    <div className="flex flex-1 flex-col">
-                                        <span className="text-sm font-medium text-ink">{item.sneaker.title}</span>
-                                        <span className="text-sm text-ink-soft">{formatPrice(item.sneaker.price)}</span>
-                                        <div className="mt-1 flex items-center gap-2">
-                                            <button type="button" aria-label="Retirer un"
-                                                onClick={() => updateQuantity(item.sneaker.id, item.quantity - 1)}
-                                                className="grid h-6 w-6 place-items-center rounded border border-line text-ink-soft hover:bg-paper-2">
-                                                <FiMinus className="h-3 w-3" />
-                                            </button>
-                                            <span className="w-6 text-center text-sm">{item.quantity}</span>
-                                            <button type="button" aria-label="Ajouter un"
-                                                onClick={() => updateQuantity(item.sneaker.id, item.quantity + 1)}
-                                                className="grid h-6 w-6 place-items-center rounded border border-line text-ink-soft hover:bg-paper-2">
-                                                <FiPlus className="h-3 w-3" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <button type="button" aria-label={`Supprimer ${item.sneaker.title}`}
-                                        onClick={() => removeFromCart(item.sneaker.id)}
-                                        className="self-start text-ink-soft transition-colors hover:text-red-500">
-                                        <FiX className="h-4 w-4" />
-                                    </button>
-                                </li>
+                                <CartLine key={item.sneaker.id} item={item} />
                             ))}
                         </ul>
                     )}
@@ -67,10 +43,10 @@ export function CartDrawer() {
                     <footer className="border-t border-line px-6 py-5">
                         <div className="mb-4 flex items-center justify-between">
                             <span className="text-sm text-ink-soft">Total</span>
-                            <span className="font-display text-xl font-bold text-ink">{formatPrice(total)}</span>
+                            <span className="font-display text-xl font-bold tabular-nums text-ink">{formatPrice(total)}</span>
                         </div>
                         <button type="button"
-                            className="w-full rounded-lg bg-accent py-3 text-sm font-medium text-white transition-colors hover:bg-accent-d">
+                            className="w-full rounded-lg bg-accent py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-d">
                             Commander
                         </button>
                         <button type="button" onClick={clearCart}
