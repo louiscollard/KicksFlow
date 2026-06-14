@@ -43,7 +43,7 @@ export function AddSneakerForm() {
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Nom du produit (ex : Aero Strike)" required />
 
-            <Input aria-label="Lien de l'image" icon={<FiImage />} type="url" name="image" value={imageSource}
+            <Input aria-label="Lien de l'image" icon={<FiImage />} type="text" name="image" value={imageSource}
                 onChange={(e) => { setImageSource(e.target.value); setImageError(false); }}
                 placeholder="Lien URL d'une image (https://…)" required />
 
