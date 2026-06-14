@@ -9,12 +9,14 @@ import { FiArrowRight } from "react-icons/fi";
 import { useNavigate } from "react-router";
 
 export function LoginPage() {
-    const [username, setusername] = useState("");
+    const [username, setUserName] = useState("");
     const navigate = useNavigate();
+    const clean = username.trim().toLowerCase();
 
     const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
-        navigate(`/order/${username}`);
+        if (!clean) return;
+        navigate(`/order/${encodeURIComponent(clean)}`);
     };
 
     return (
@@ -43,7 +45,7 @@ export function LoginPage() {
                                 type="text"
                                 placeholder="Ex : Louis"
                                 value={username}
-                                onChange={(e) => setusername(e.target.value)}
+                                onChange={(e) => setUserName(e.target.value)}
                                 icon={<CgProfile />}
                                 required
                             />
