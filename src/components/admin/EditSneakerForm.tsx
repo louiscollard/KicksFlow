@@ -78,8 +78,7 @@ export function EditSneakerForm({ sneaker }: EditSneakerFormProps) {
                 <Button type="submit" className="w-full">
                     Enregistrer
                 </Button>
-                <Button type="button" onClick={cancelEditing}
-                    className="rounded-lg border border-line px-4 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-paper-2">
+                <Button variant="secondary" type="button" onClick={cancelEditing} className="px-4 py-2 text-sm">
                     Annuler
                 </Button>
             </div>
