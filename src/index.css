@@ -18,4 +18,15 @@
     --toastify-color-light: #fbfaf7;
     --toastify-text-color-light: #1c1a17;
     --toastify-color-progress-light: #1c1a17;
+    --animate-marquee: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
