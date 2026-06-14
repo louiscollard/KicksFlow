@@ -1,6 +1,7 @@
 import { createUser, getUser, updateUserMenu } from "@/api/users";
 import { SneakerContext } from "@/context/SneakerContext";
 import { fakeMenu, type Sneaker } from "@/data/sneakers";
+import { createId } from "@/lib/id";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -45,7 +46,7 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
     };
 
     const addSneaker = (sneaker: Omit<Sneaker, "id">) => {
-        persist([{ ...sneaker, id: Date.now() }, ...sneakers]);
+        persist([{ ...sneaker, id: createId()}, ...sneakers]);
     };
 
     const removeSneaker = (id: number) => {

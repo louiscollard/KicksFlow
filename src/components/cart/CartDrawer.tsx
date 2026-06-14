@@ -1,10 +1,13 @@
-import { CartLine } from "@/components/cart/CartLine";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/format";
+import { useState } from "react";
 import { FiX } from "react-icons/fi";
+import { CartLine } from "./CartLine";
+import { CheckoutModal } from "./CheckoutModal";
 
 export function CartDrawer() {
     const { items, isOpen, closeCart, clearCart } = useCart();
+    const [isCheckoutOpen, setCheckoutOpen] = useState(false);
     const total = items.reduce((sum, item) => sum + item.sneaker.price * item.quantity, 0);
 
     return (
@@ -45,7 +48,7 @@ export function CartDrawer() {
                             <span className="text-sm text-ink-soft">Total</span>
                             <span className="font-display text-xl font-bold tabular-nums text-ink">{formatPrice(total)}</span>
                         </div>
-                        <button type="button"
+                        <button type="button" onClick={() => setCheckoutOpen(true)}
                             className="w-full rounded-lg bg-accent py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-d">
                             Commander
                         </button>
@@ -56,6 +59,8 @@ export function CartDrawer() {
                     </footer>
                 )}
             </aside>
+
+            <CheckoutModal isOpen={isCheckoutOpen} onClose={() => setCheckoutOpen(false)} />
         </>
     );
 }
