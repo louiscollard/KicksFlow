@@ -1,62 +1,61 @@
-# ⚡ KicksFlow — Premium Sneaker Marketplace & Dashboard
+# ⚡ KicksFlow — Premium Sneaker Marketplace & Admin Dashboard
 
-**KicksFlow** is an inventory management SaaS and premium sneakers marketplace featuring a minimalist, modern design. This project showcases proficiency in a modern Front-End stack, complex global state management, and real-time integration with a NoSQL database.
+**[→ Live demo](https://YOUR-DEPLOY-URL)** · just enter any first name to explore — no account, no password.
 
----
+KicksFlow is a premium sneaker **marketplace SPA** with a customer storefront and an **admin dashboard** (full CRUD + shopping cart), backed by Firebase. A personal project built to showcase a modern front-end stack, global state management with React Context, and integration with a NoSQL database.
 
-![Aperçu de KicksFlow](src/assets/images/screenshot.png)
+![KicksFlow — customer storefront](src/assets/images/screenshot_normal.png)
 
----
+> _Customer storefront — catalog & shopping cart. Product images are AI-generated (demonstration project)._
 
 ## 🚀 Key Features
 
-- **Customer E-Space:** Seamless sneaker catalog and advanced shopping cart (live total calculations and quantity updates).
-- **Admin Dashboard:** Full CRUD system featuring a "Live" editing form (changes instantly reflect across the product catalog).
-- **Persistence:** Immediate synchronization of products and carts via a real-time database.
+- **Per-user storefronts** — each username gets its own catalog, loaded from Firestore (created on the fly for new visitors).
+- **Shopping cart** — add items, update quantities, remove, with a live total computed from state; persisted to `localStorage`.
+- **Admin dashboard** — toggle admin mode for a full CRUD workflow: add, inline-edit and delete products, with changes reflected instantly in the catalog.
+- **Persistence, split by concern** — the menu is saved per user to **Firestore**, the cart to **localStorage** — each where it belongs.
+- **Polished edge cases** — loading skeletons, an on-brand 404 page, and a dedicated "user not found" state.
 
----
+![KicksFlow — admin dashboard](src/assets/images/screenshot_admin.png)
+
+> _Admin mode — add, edit and delete products in place, synced to Firestore._
 
 ## 🛠️ Tech Stack
 
 - **Framework:** React 19 (Vite)
-- **Language:** TypeScript (Strict typing for data streams)
-- **Design System:** Tailwind CSS (Custom integration, clean & modern aesthetic)
+- **Language:** TypeScript (strict)
+- **Design system:** Tailwind CSS v4 (custom theme, editorial aesthetic)
 - **Routing:** React Router v7
-- **Database:** Firebase Firestore (Real-time tracking)
+- **Database:** Firebase Firestore (cloud persistence)
 
----
+## 📦 Local Setup
 
-## 💻 Local Setup
-
-Follow these steps to run the project locally on your machine:
-
-1. Clone the repository
-   
-```bash
-   git clone [https://github.com/YOUR_USERNAME/kicksflow.git](https://github.com/YOUR_USERNAME/kicksflow.git)
-   cd kicksflow
-   ```
-   
-2. Install dependencies
+1. **Clone the repository**
 
 ```bash
-   npm install
-   ```
-   
-3. Configure the environment variables
-   Create a .env.local file at the root of the project and add your Firebase credentials:
+git clone https://github.com/louiscollard/KicksFlow.git
+cd KicksFlow
+```
 
-```env
-   VITE_FIREBASE_API_KEY=your_api_key
-   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-   VITE_FIREBASE_PROJECT_ID=your_project_id
-   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-   VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-   VITE_FIREBASE_APP_ID=your_app_id
-  ```
-  
-4. Start the development server
+2. **Install dependencies**
 
 ```bash
-   npm run dev
-   ```
+npm install
+```
+
+3. **Configure environment variables** — create a `.env.local` file at the project root with your Firebase credentials:
+
+```
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+4. **Start the dev server**
+
+```bash
+npm run dev
+```
