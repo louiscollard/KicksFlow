@@ -1,6 +1,6 @@
 # ⚡ KicksFlow — Premium Sneaker Marketplace & Admin Dashboard
 
-**[→ Live demo](https://YOUR-DEPLOY-URL)** · just enter any first name to explore — no account, no password.
+**[→ Live demo](https://kicksflow-louiscollard.vercel.app/)** · just enter any first name to explore — no account, no password.
 
 KicksFlow is a premium sneaker **marketplace SPA** with a customer storefront and an **admin dashboard** (full CRUD + shopping cart), backed by Firebase. A personal project built to showcase a modern front-end stack, global state management with React Context, and integration with a NoSQL database.
 
