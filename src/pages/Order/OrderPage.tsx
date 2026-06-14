@@ -6,7 +6,6 @@ import { Navbar } from "@/components/layout/Navbar/Navbar";
 import { useAdmin } from "@/context/AdminContext";
 import { useSneakers } from "@/context/SneakerContext";
 import { NotFoundPage } from "@/pages/NotFound/NotFoundPage";
-// …
 export function OrderPage() {
     const { isAdmin } = useAdmin();
     const { isLoading, notFound, error } = useSneakers();

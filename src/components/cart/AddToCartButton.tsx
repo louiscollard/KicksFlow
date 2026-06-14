@@ -1,4 +1,3 @@
-// components/cart/AddToCartButton.tsx
 import { useCart } from "@/context/CartContext";
 import type { Sneaker } from "@/data/sneakers";
 import { FiPlus } from "react-icons/fi";

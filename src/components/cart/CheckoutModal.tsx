@@ -1,4 +1,3 @@
-// components/cart/CheckoutModal.tsx
 import { Modal } from "@/components/ui/Modal";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/format";
