@@ -1,14 +1,23 @@
+import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { FiPackage } from "react-icons/fi";
+import { useSneakers } from "@/context/SneakerContext";
+import { FiPackage, FiRefreshCw } from "react-icons/fi";
 
 export function SneakerGridEmpty({ isAdmin }: { isAdmin: boolean }) {
+    const { regenerateMenu } = useSneakers();
+
     if (isAdmin) {
         return (
             <EmptyState
                 icon={FiPackage}
                 eyebrow="Inventaire vide"
                 title="Aucun produit."
-                description="Ajoutez une première paire depuis le panneau admin, en bas de l'écran."
+                description="Ajoute une paire depuis le panneau admin, ou régénère le catalogue de démo."
+                action={
+                    <Button onClick={regenerateMenu} icon={<FiRefreshCw />}>
+                        Générer de nouveaux produits
+                    </Button>
+                }
             />
         );
     }

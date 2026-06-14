@@ -12,6 +12,7 @@ export type SneakerContextType = {
     updateSneaker: (id: number, changes: Omit<Sneaker, "id">) => void;
     startEditing: (id: number) => void;
     cancelEditing: () => void;
+    regenerateMenu: () => void;
 };
 
 export const SneakerContext = createContext<SneakerContextType | null>(null);

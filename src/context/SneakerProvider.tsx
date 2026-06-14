@@ -67,9 +67,10 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
 
     const startEditing = (id: number) => setEditingId(id);
     const cancelEditing = () => setEditingId(null);
+    const regenerateMenu = () => persist(fakeMenu);
 
     return (
-        <SneakerContext.Provider value={{ sneakers, isLoading , error, notFound, editingId, addSneaker, removeSneaker, updateSneaker, startEditing, cancelEditing }}>
+        <SneakerContext.Provider value={{ sneakers, isLoading , error, notFound, editingId, addSneaker, removeSneaker, updateSneaker, startEditing, cancelEditing, regenerateMenu }}>
             {children}
         </SneakerContext.Provider>
     );

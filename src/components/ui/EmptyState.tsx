@@ -1,13 +1,14 @@
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 
 type EmptyStateProps = {
     icon: ComponentType<{ className?: string; strokeWidth?: number }>;
     eyebrow?: string;
     title: string;
     description?: string;
+    action?: ReactNode;          // ← nouveau
 };
 
-export function EmptyState({ icon: Icon, eyebrow, title, description }: EmptyStateProps) {
+export function EmptyState({ icon: Icon, eyebrow, title, description, action }: EmptyStateProps) {
     return (
         <div className="col-span-full flex flex-col items-center justify-center gap-5 py-20 text-center">
             <span className="grid h-20 w-20 place-items-center rounded-full border border-line bg-paper-2 text-ink-soft">
@@ -22,6 +23,7 @@ export function EmptyState({ icon: Icon, eyebrow, title, description }: EmptySta
                     <p className="mx-auto max-w-sm text-sm leading-relaxed text-ink-soft">{description}</p>
                 )}
             </div>
+            {action}
         </div>
     );
 }
