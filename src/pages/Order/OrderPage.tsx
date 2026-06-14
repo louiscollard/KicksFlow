@@ -8,7 +8,7 @@ import { useSneakers } from "@/context/SneakerContext";
 import { NotFoundPage } from "@/pages/NotFound/NotFoundPage";
 export function OrderPage() {
     const { isAdmin } = useAdmin();
-    const { notFound, error } = useSneakers();
+    const { notFound } = useSneakers();
 
     if (notFound) {
         return (
@@ -29,7 +29,6 @@ export function OrderPage() {
             </main>
             <Footer />
             {isAdmin && <AdminTabs />}
-            {error && <p className="py-8 text-center text-accent">{error}</p>}
         </div>
     );
 }
