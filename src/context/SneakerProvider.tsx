@@ -4,6 +4,7 @@ import { fakeMenu, type Sneaker } from "@/data/sneakers";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { toast } from "react-toastify";
 
 export function SneakerProvider({ children }: { children: ReactNode }) {
     const { username } = useParams();
@@ -38,7 +39,9 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
 
     const persist = (menu: Sneaker[]) => {
         setSneakers(menu);
-        if (username) updateUserMenu(username, menu);   // garde ici → username: string
+        if (username) {
+            updateUserMenu(username, menu).catch(() => toast.error("Sauvegarde impossible"));
+        }
     };
 
     const addSneaker = (sneaker: Omit<Sneaker, "id">) => {
