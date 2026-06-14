@@ -4,6 +4,7 @@ import { CartProvider } from '@/context/CartProvider';
 import { SneakerProvider } from '@/context/SneakerProvider';
 import '@/index.css';
 import { LoginPage } from '@/pages/Login/LoginPage';
+import { NotFoundPage } from '@/pages/NotFound/NotFoundPage';
 import { OrderPage } from '@/pages/Order/OrderPage';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
@@ -20,6 +21,7 @@ function App() {
               <OrderPage />
             </SneakerProvider>
             } />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <ToastContainer position="bottom-right" />
         </CartProvider>
