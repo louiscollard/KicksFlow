@@ -23,13 +23,15 @@ export function OrderPage() {
     }
 
     return (
-        <>
+        <div className="flex min-h-screen flex-col">
             <Navbar />
             <Marquee />
-            <SneakerGrid />
+            <main className="flex-1">
+                <SneakerGrid />
+            </main>
             <Footer />
             {isAdmin && <AdminTabs />}
             {error && <p className="py-8 text-center text-accent">{error}</p>}
-        </>
+        </div>
     );
 }
