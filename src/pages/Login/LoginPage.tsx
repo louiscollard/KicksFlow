@@ -16,7 +16,7 @@ export function LoginPage() {
     const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!clean) return;
-        navigate(`/order/${encodeURIComponent(clean)}`);
+        navigate(`/order/${encodeURIComponent(clean)}`, { state: { fromLogin: true } });
     };
 
     return (

@@ -2,10 +2,20 @@ import { Logo } from "@/components/ui/Logo";
 import { FiArrowLeft } from "react-icons/fi";
 import { Link } from "react-router";
 
-export function NotFoundPage() {
+type NotFoundPageProps = {
+    eyebrow?: string;
+    title?: string;
+    description?: string;
+};
+
+export function NotFoundPage({
+    eyebrow = "Erreur 404",
+    title = "Cette paire s'est envolée.",
+    description = "La page que tu cherches n'existe pas — ou le drop est déjà terminé. Reviens à l'accueil pour retrouver ton espace.",
+}: NotFoundPageProps)
+    {
     return (
         <div className="relative flex min-h-screen flex-col bg-paper px-8 py-10 sm:px-14">
-            {/* texture diagonale discrète — le même motif que le fond des packshots */}
             <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0"
@@ -22,7 +32,7 @@ export function NotFoundPage() {
 
             <main className="relative mx-auto flex w-full max-w-xl flex-1 flex-col items-center justify-center text-center">
                 <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-2 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-ink-soft">
-                    <span className="h-2 w-2 rounded-full bg-accent" /> Erreur 404
+                    <span className="h-2 w-2 rounded-full bg-accent" /> {eyebrow}
                 </span>
 
                 <div
@@ -33,11 +43,10 @@ export function NotFoundPage() {
                 </div>
 
                 <h1 className="mt-2 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-                    Cette paire s'est envolée.
+                    {title}
                 </h1>
                 <p className="mt-4 max-w-md text-ink-soft">
-                    La page que tu cherches n'existe pas — ou le drop est déjà terminé.
-                    Reviens à l'accueil pour retrouver ton espace.
+                    {description}
                 </p>
 
                 <Link

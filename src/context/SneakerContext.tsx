@@ -5,6 +5,7 @@ export type SneakerContextType = {
     sneakers: Sneaker[];
     isLoading: boolean;
     error: string | null;
+    notFound: boolean;
     editingId: number | null;
     addSneaker: (sneaker: Omit<Sneaker, "id">) => void;
     removeSneaker: (id: number) => void;

@@ -4,7 +4,7 @@ import { fakeMenu, type Sneaker } from "@/data/sneakers";
 import { createId } from "@/lib/id";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { toast } from "react-toastify";
 
 export function SneakerProvider({ children }: { children: ReactNode }) {
@@ -13,6 +13,10 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [editingId, setEditingId] = useState<number | null>(null);
+    const [notFound, setNotFound] = useState(false);
+
+    const location = useLocation();
+    const fromLogin = location.state?.fromLogin === true;
 
     useEffect(() => {
         if (!username) return;
@@ -21,9 +25,14 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
         async function load() {
             setIsLoading(true);
             setError(null);
+            setNotFound(false);
             try {
                 let menu = await getUser(name);
                 if (menu === null) {
+                    if (!fromLogin) {
+                        setNotFound(true);
+                        return;
+                    }
                     menu = fakeMenu;
                     await createUser(name, fakeMenu);
                 }
@@ -35,8 +44,7 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
             }
         }
         load();
-    }, [username]);
-
+    }, [username, fromLogin]);
 
     const persist = (menu: Sneaker[]) => {
         setSneakers(menu);
@@ -61,7 +69,7 @@ export function SneakerProvider({ children }: { children: ReactNode }) {
     const cancelEditing = () => setEditingId(null);
 
     return (
-        <SneakerContext.Provider value={{ sneakers, isLoading , error, editingId, addSneaker, removeSneaker, updateSneaker, startEditing, cancelEditing }}>
+        <SneakerContext.Provider value={{ sneakers, isLoading , error, notFound, editingId, addSneaker, removeSneaker, updateSneaker, startEditing, cancelEditing }}>
             {children}
         </SneakerContext.Provider>
     );
