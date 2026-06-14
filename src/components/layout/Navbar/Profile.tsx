@@ -10,24 +10,24 @@ export function Profile() {
     const handleLogout = () => {
         clearCart();
         navigate("/");
-    }
-    
+    };
+
     return (
         <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-sm font-bold text-paper">
                     {username?.charAt(0).toUpperCase()}
                 </span>
-                <span className="text-sm font-semibold text-gray-800">{username}</span>
+                <span className="text-sm font-semibold text-ink">{username}</span>
             </div>
-            <span className="h-5 w-px bg-gray-200" />
+            <span className="h-5 w-px bg-line" />
             <button
                 onClick={handleLogout}
-                className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm font-medium text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
+                className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm font-medium text-ink-soft transition-colors hover:bg-paper-2 hover:text-ink cursor-pointer"
             >
                 <FiLogOut className="h-4 w-4" />
                 Se déconnecter
             </button>
         </div>
-    )
+    );
 }
