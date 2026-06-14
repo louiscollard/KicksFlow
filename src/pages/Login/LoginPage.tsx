@@ -27,13 +27,16 @@ export function LoginPage() {
                 </header>
 
                 <div className="mx-auto flex w-full max-w-md flex-1 flex-col justify-center py-12">
-                    <h1 className="font-display text-5xl font-extrabold tracking-tighter text-ink">
+                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-line bg-paper-2 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-ink-soft">
+                        <span className="h-2 w-2 rounded-full bg-accent" /> Projet de démonstration
+                    </span>
+
+                    <h1 className="mt-6 font-display text-5xl font-extrabold tracking-tighter text-ink">
                         Bienvenue.
                     </h1>
                     <p className="mt-4 text-ink-soft">
-                        Connecte-toi pour suivre les drops et accéder à ton espace.
+                        Pas de compte ni de mot de passe — entre un prénom pour explorer ton espace.
                     </p>
-
                     <form onSubmit={handleSubmit} className="mt-10 flex flex-col gap-5">
                         <div className="flex flex-col gap-2">
                             <Label htmlFor="username" className="text-sm font-semibold text-ink">
@@ -73,7 +76,7 @@ export function LoginPage() {
 
                     <div>
                         <h2 className="font-display text-5xl font-extrabold leading-none tracking-tight">
-                            Ton vestiaire pour les <em className="italic text-accent">grails</em> — acheté, vendu, vérifié.
+                            Ton vestiaire pour les <em className="italic text-accent">sneakers</em> — acheté, vendu, vérifié.
                         </h2>
                         <div className="mt-10 flex gap-12 border-t border-white/15 pt-6">
                             <div><div className="font-display text-3xl font-bold tabular-nums">99,4 %</div><div className="mt-1 text-sm text-white/60">Taux d'authentification</div></div>
